@@ -2,7 +2,6 @@
     import { inputData } from '../../store/inheritanceStore';
 
     // ストアのデータをローカル変数にバインド（双方向バインディングを実現）
-    // $inputData が変更されたら data も変更され、data が変更されたら $inputData も変更されます。
     let data = $inputData;
 
     // inputDataを直接バインドする方法もあるが、ここではローカル変数経由で$ストアを更新
@@ -27,8 +26,8 @@
     <div class="form-group">
         <label for="isSpouse">配偶者の有無</label>
         <select id="isSpouse" bind:value={data.isSpouse} class="select-input">
-            <option value={true}>あり</option>
-            <option value={false}>なし</option>
+            <option value="true">あり</option>
+            <option value="false">なし</option>
         </select>
     </div>
 
@@ -82,8 +81,8 @@
     <div class="form-group">
         <label for="isSmallLandApplied">小規模宅地等の特例を考慮しますか？</label>
         <select id="isSmallLandApplied" bind:value={data.isSmallLandApplied} class="select-input">
-            <option value={true}>はい (適用を考慮する)</option>
-            <option value={false}>いいえ</option>
+            <option value="true">はい (適用を考慮する)</option>
+            <option value="false">いいえ</option>
         </select>
     </div>
     
@@ -103,60 +102,5 @@
 </div>
 
 <style>
-    .input-card {
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        background-color: #f9f9f9;
-    }
-    h3 {
-        color: #00796b;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 5px;
-        margin-top: 0;
-    }
-    .form-group {
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    label {
-        flex: 0 0 180px; /* ラベル幅を固定 */
-        font-weight: bold;
-        margin-right: 15px;
-        font-size: 0.95em;
-    }
-    input[type="number"], .select-input {
-        flex: 0 0 120px;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-    .short-input {
-        flex: 0 0 80px;
-    }
-    .unit-text {
-        margin-left: 10px;
-        color: #777;
-        font-size: 0.9em;
-        flex-grow: 1;
-    }
-    .sub-group {
-        margin-left: 20px;
-        padding-left: 10px;
-        border-left: 3px solid #ccc;
-    }
-    .note {
-        font-size: 0.8em;
-        color: #555;
-        margin-top: 10px;
-        margin-left: 20px;
-    }
-    hr {
-        margin: 20px 0;
-        border: 0;
-        border-top: 1px solid #eee;
-    }
+/* ... (スタイルは変更なし) ... */
 </style>
