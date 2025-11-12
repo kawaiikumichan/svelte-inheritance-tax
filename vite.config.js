@@ -5,13 +5,10 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [svelte()],
+  // 不要な設定を削除し、Vercelが自動検出に成功するようシンプルにします
   server: {
-    host: '0.0.0.0',
-    port: 5173,
+    // host: '0.0.0.0' や port: 5173 はローカル専用のため削除
   },
   base: '/',
-  root: process.cwd(), // この行はローカル実行用として残しておく
-  
-  // ★重要★ ここでルートディレクトリを設定し、index.html の場所を指定します
-  publicDir: 'public', // public フォルダを静的アセットのベースとして指定
+  // root: process.cwd(), も publicDir: 'public' もVercelでは不要なため削除
 });
