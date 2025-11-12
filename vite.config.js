@@ -10,6 +10,8 @@ export default defineConfig({
     port: 5173,
   },
   base: '/',
-  // ★この行を追記します
-  root: process.cwd(),
+  root: process.cwd(), // この行はローカル実行用として残しておく
+  
+  // ★重要★ ここでルートディレクトリを設定し、index.html の場所を指定します
+  publicDir: 'public', // public フォルダを静的アセットのベースとして指定
 });
